@@ -1,24 +1,29 @@
-# README
+README
+# Test-Guru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Training project from Thinknetica Web-Development Course.
 
-Things you may want to cover:
+# List of entities for the Test-Guru project:
 
-* Ruby version
 
-* System dependencies
+### User
 
-* Configuration
+  It has his own name and group. Authentication of user.
 
-* Database creation
+### Test
 
-* Database initialization
+It is the main entitie of the project.
 
-* How to run the test suite
+### Question
 
-* Services (job queues, cache servers, search engines, etc.)
+  It belongs to tests; and contains question text and list of answers.
 
-* Deployment instructions
+### Answer
 
-* ...
+  It is related to the question; and contains answer text.
+
+### Result
+
+It contains test results.
+
+
