@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_22_153907) do
+ActiveRecord::Schema.define(version: 2022_11_23_184504) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 2022_11_22_153907) do
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
+  create_table "results", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_results_on_test_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
+  end
+
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 1, null: false
@@ -47,14 +56,13 @@ ActiveRecord::Schema.define(version: 2022_11_22_153907) do
   create_table "users", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
-    t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["test_id"], name: "index_users_on_test_id"
   end
 
   add_foreign_key "answers", "questions"
   add_foreign_key "questions", "tests"
+  add_foreign_key "results", "tests"
+  add_foreign_key "results", "users"
   add_foreign_key "tests", "categories"
-  add_foreign_key "users", "tests"
 end
