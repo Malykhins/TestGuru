@@ -1,7 +1,7 @@
 README
 # Test-Guru
 
-Training project from Thinknetica Web-Development Course.
+Training project from Thinknetica Web-Development course.
 
 # List of entities for the Test-Guru project:
 
