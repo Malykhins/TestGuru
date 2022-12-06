@@ -6,7 +6,6 @@ class Answer < ApplicationRecord
   validate :validate_answers_limit, on: :create
 
   scope :correct_answers, -> { where(correct: true) }
-  scope :question_answers, -> { where(question: question_id) }
 
   private
 
