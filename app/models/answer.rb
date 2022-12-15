@@ -1,8 +1,8 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  validate :body, presence: true
-  validate :question, presence: true
+  validates :body, presence: true
+  validates :question, presence: true
   validate :validate_answers_limit, on: :create
 
   scope :correct_answers, -> { where(correct: true) }

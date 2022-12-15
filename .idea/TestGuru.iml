@@ -65,6 +65,8 @@
     <orderEntry type="library" scope="PROVIDED" name="mini_mime (v1.1.2, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="minitest (v5.16.3, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="msgpack (v1.6.0, RVM: ruby-3.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-protocol (v0.1.3, RVM: ruby-3.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="net-smtp (v0.3.3, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nio4r (v2.5.8, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="nokogiri (v1.13.9, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="parallel (v1.22.1, RVM: ruby-3.1.2) [gem]" level="application" />
@@ -102,6 +104,7 @@
     <orderEntry type="library" scope="PROVIDED" name="sqlite3 (v1.5.3, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thor (v1.2.1, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v2.0.11, RVM: ruby-3.1.2) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="timeout (v0.3.0, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks (v5.2.1, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="turbolinks-source (v5.2.0, RVM: ruby-3.1.2) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v2.0.5, RVM: ruby-3.1.2) [gem]" level="application" />
@@ -186,6 +189,24 @@
       <RakeTaskImpl id="rake">
         <subtasks>
           <RakeTaskImpl description="List versions of all Rails frameworks and the environment" fullCommand="about" id="about" />
+          <RakeTaskImpl id="action_mailbox">
+            <subtasks>
+              <RakeTaskImpl id="ingress">
+                <subtasks>
+                  <RakeTaskImpl description="Relay an inbound email from Exim to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:exim" id="exim" />
+                  <RakeTaskImpl description="Relay an inbound email from Postfix to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:postfix" id="postfix" />
+                  <RakeTaskImpl description="Relay an inbound email from Qmail to Action Mailbox (URL and INGRESS_PASSWORD required)" fullCommand="action_mailbox:ingress:qmail" id="qmail" />
+                  <RakeTaskImpl description="" fullCommand="action_mailbox:ingress:environment" id="environment" />
+                </subtasks>
+              </RakeTaskImpl>
+              <RakeTaskImpl description="Installs Action Mailbox and its dependencies" fullCommand="action_mailbox:install" id="install" />
+              <RakeTaskImpl id="install">
+                <subtasks>
+                  <RakeTaskImpl description="Copy migrations from action_mailbox to application" fullCommand="action_mailbox:install:migrations" id="migrations" />
+                </subtasks>
+              </RakeTaskImpl>
+            </subtasks>
+          </RakeTaskImpl>
           <RakeTaskImpl id="action_text">
             <subtasks>
               <RakeTaskImpl description="Copy over the migration, stylesheet, and JavaScript files" fullCommand="action_text:install" id="install" />
