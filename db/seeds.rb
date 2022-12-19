@@ -18,6 +18,7 @@ tests = Test.create!([
 
 questions = Question.create!([
                                { body: 'Who Invented the Ruby Language?', test: tests[0] },
+                               { body: 'Ruby is dead?', test: tests[0] },
                                { body: 'In which file can gems be modified?', test: tests[1] },
                                { body: 'What is an HTML tag?', test: tests[2] }
                              ])
