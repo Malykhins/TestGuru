@@ -1,29 +1,44 @@
 # frozen_string_literal: true
 
 class QuestionsController < ApplicationController
-  before_action :set_test, only: %i[index new create]
-  before_action :set_question, only: %i[show destroy]
+  before_action :set_test, only: %i[new create]
+  before_action :set_question, only: %i[show destroy edit update]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @questions = @test.questions
-    render inline: 'List of test questions: <%= @questions.pluck(:body) %>'
   end
 
-  def show
-    render inline: '<%= @question.body %>'
-  end
+  def show; end
 
-  def new; end
+  def new
+    @question = Question.new
+  end
 
   def create
-    question = @test.questions.create(question_param)
-    redirect_to question
+    @question = @test.questions.new(question_param)
+
+    if @question.save
+      redirect_to @test
+    else
+      render :new
+    end
   end
 
   def destroy
     @question.destroy
+    redirect_to test_path(@question.test.id)
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(question_param)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   private
@@ -37,7 +52,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_param
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found

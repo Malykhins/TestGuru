@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tests, except: [:index], shallow: true do
-    resources :questions
+  resources :tests, shallow: true do
+    resources :questions, except: :index
   end
 end
