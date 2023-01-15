@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[show update] do
     get :result, on: :member
   end
+
+  root 'test#index'
+
+  get :signup, to: 'users#new'
+
+  resources :users, only: create
 end
