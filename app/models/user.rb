@@ -1,14 +1,29 @@
 # frozen_string_literal: true
+
 require 'digest/sha1'
 
 class User < ApplicationRecord
+  attr_reader :password
+  attr_writer :password_confirmation
+
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
 
   validates :email, presence: true
+  validates :password, presence: true, if: :Proc.new { |u| u.password_digest.blank? }
+  validates :password, confirmation: true
 
   scope :test_level, ->(level) { where(level:) }
+
+  def password=(password_string)
+    if password_string.nil?
+      self.password_digest = nil
+    elsif password_string.present?
+      @password_string = password_string
+      self.password_digest = digest(password_string)
+    end
+  end
 
   def view_user_tests(level)
     tests.test_level(level)
@@ -19,7 +34,7 @@ class User < ApplicationRecord
   end
 
   def authenticate(password_sting)
-    digest(password_sting) == self.password_digest ? self : false
+    digest(password_sting) == password_digest ? self : false
   end
 
   private
