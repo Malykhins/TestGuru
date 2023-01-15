@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     get :result, on: :member
   end
 
-  root 'test#index'
+  root 'tests#index'
 
   get :signup, to: 'users#new'
 
