@@ -11,7 +11,14 @@
   </head>
 
   <body>
+
+    <p align=”left”> <%= link_to 'TestGuru', root_path %></p>
+
+
+    <%= render 'shared/navbar' %>
+
     <%= yield %>
+
     <%= render 'shared/footer' %>
   </body>
 </html>

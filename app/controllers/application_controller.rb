@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
-
   before_action :authenticate_user!
 
-  helper_method :current_user
+  helper_method :current_user, :logged_in?
 
   private
 
   def authenticate_user!
     unless current_user
+      cookies[:path] = request.original_fullpath
       redirect_to login_path
     end
   end
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
   end
 
-  def login_in?
+  def logged_in?
     current_user.present?
   end
 end

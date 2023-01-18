@@ -1,0 +1,11 @@
+<div class="nav user">
+  <% if logged_in? %>
+    <p>Welcome, <b><%= current_user.name %></b> Guru</p>
+    <p><%= link_to 'Exit', session_path(session),
+                   method: :delete,
+                   data: { confirm: 'Are you shoe?' } %></p>
+  <% else %>
+    <p><%= link_to 'Log in', login_path %></p>
+    <p><%= link_to 'Sign up', signup_path %></p>
+  <% end %>
+</div>
