@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
+
   resources :tests, shallow: true do
     post :start, on: :member
     resources :questions, except: :index do
@@ -14,11 +16,4 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  get :signup, to: 'users#new'
-
-  resources :users, only: :create
-
-  get :login, to: 'sessions#new'
-
-  resource :session, only: %i[create destroy]
 end
