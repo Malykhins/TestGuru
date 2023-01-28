@@ -11,6 +11,6 @@
   <%= render @question.answers %>
 </ol>
 
-<%= link_to 'Back', test_path(@question.test) %>
+<%= link_to 'Back', admin_tests_path(@question.test) %>
 <%= link_to 'Edit',  edit_question_path %>
 <%= link_to 'Delete question', question_path(@question), method: :delete, data: { confirm: "Are you sure to delete?" } %>

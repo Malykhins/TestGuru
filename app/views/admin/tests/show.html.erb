@@ -1,0 +1,25 @@
+<% if @questions.present? %>
+  <p><%= "Test: #{@test.title}, level: #{@test.level}" %></p>
+
+  <%= link_to 'Back', admin_tests_path %>
+  <%= link_to 'Edit test', edit_admin_test_path(@test) %>
+  <%= link_to 'Delete test', admin_test_path(@test),
+              method: :delete, data: { confirm: "Are you sure to delete?" } %>
+
+  <h2>Test questions:</h2>
+
+  <table>
+    <tr>
+      <th>id</th>
+      <th>Body</th>
+    </tr>
+
+    <%= render partial: 'questions/question', collection: @questions %>
+
+  </table>
+  <%= link_to 'New question', new_test_question_path(@test) %>
+<% else %>
+  <p>This test has no questions.</p>
+<% end %>
+
+

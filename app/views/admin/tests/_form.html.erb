@@ -1,8 +1,8 @@
-<%= form_with model: @test do |form| %>
+<%= form_with model: [:admin, @test] do |form| %>
 
   <p>
     <%= form.label :author %>
-    <%= form.collection_select :author_id, User.all, :id, :name, prompt: true %>
+    <%= form.collection_select :author_id, User.all, :id, :first_name, prompt: true %>
   </p>
 
   <p>

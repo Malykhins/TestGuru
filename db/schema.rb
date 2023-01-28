@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_24_181804) do
+ActiveRecord::Schema.define(version: 2023_01_27_133859) do
 
   create_table "answers", force: :cascade do |t|
     t.text "body", null: false
@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2023_01_24_181804) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", null: false
     t.string "email", default: "", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -77,7 +76,7 @@ ActiveRecord::Schema.define(version: 2023_01_24_181804) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "type", default: "user", null: false
+    t.string "type", default: "User", null: false
     t.string "first_name"
     t.string "last_name"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
