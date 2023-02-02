@@ -7,6 +7,6 @@ class Admin::BaseController < ApplicationController
   private
 
   def admin_required!
-    redirect_to admin_tests_path, alert: 'You are not authorized to view this page.' unless current_user&.is_a?(Admin)
+    redirect_to tests_path, alert: 'You are not authorized to view this page.' unless current_user&.is_a?(Admin)
   end
 end

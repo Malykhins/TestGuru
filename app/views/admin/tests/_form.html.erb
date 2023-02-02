@@ -1,11 +1,5 @@
 <%= form_with model: [:admin, @test] do |form| %>
-
-  <p>
-    <%= form.label :author %>
-    <%= form.collection_select :author_id, User.all, :id, :first_name, prompt: true %>
-  </p>
-
-  <p>
+  
     <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>

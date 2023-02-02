@@ -14,10 +14,10 @@
       <th>Body</th>
     </tr>
 
-    <%= render partial: 'questions/question', collection: @questions %>
+    <%= render @test.questions %>
 
   </table>
-  <%= link_to 'New question', new_test_question_path(@test) %>
+  <%= link_to 'New question', new_admin_test_question_path(@test) %>
 <% else %>
   <p>This test has no questions.</p>
 <% end %>

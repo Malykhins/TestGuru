@@ -1,0 +1,5 @@
+
+ru:
+  devise:
+    registrations:
+      signed_up_but_unconfirmed: "Привет, %{first_name}!"
