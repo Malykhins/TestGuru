@@ -1,7 +1,7 @@
-<h1> Edit "<%= @test.title %>" test, level: <%= @test.level %> </h1>
+<h1> <%= t(".edit_test", title: @test.title, level: @test.level) %> </h1>
 
 <%= render 'shared/errors', resource: @test %>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', admin_test_path %>
+<%= link_to t('.back'), admin_test_path(@test) %>

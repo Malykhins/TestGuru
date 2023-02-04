@@ -1,0 +1,17 @@
+en:
+  activerecord:
+    models:
+      answer: "Answer"
+      test: "Test"
+    attributes:
+      answer:
+        body: "Body"
+        correct: "Correct"
+        question_id: "Question_id"
+      test:
+        title: "Title"
+        level: "Level"
+        author_id: "Author"
+    errors:
+      messages:
+        blank: "Can't be blank"

@@ -1,0 +1,18 @@
+ru:
+  activerecord:
+    models:
+      answer: "Ответы"
+      test: "Тест"
+    attributes:
+      answer:
+        body: "Текст ответа"
+        correct: "Правильный ответ"
+        question_id: "Относится к вопросу(id)"
+      test:
+        title: "Название"
+        level: "Уровень"
+        author_id: "Автор"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+

@@ -1,25 +1,25 @@
 <% if @questions.present? %>
-  <p><%= "Test: #{@test.title}, level: #{@test.level}" %></p>
+  <p><%= t(".show_test", title: @test.title, level: @test.level) %></p>
 
-  <%= link_to 'Back', admin_tests_path %>
-  <%= link_to 'Edit test', edit_admin_test_path(@test) %>
-  <%= link_to 'Delete test', admin_test_path(@test),
-              method: :delete, data: { confirm: "Are you sure to delete?" } %>
+  <%= link_to t('.back'), admin_tests_path %>
+  <%= link_to t('.edit_test'), edit_admin_test_path(@test) %>
+  <%= link_to t('.delete_test'), admin_test_path(@test),
+              method: :delete, data: { confirm: t(".sure") } %>
 
-  <h2>Test questions:</h2>
+  <h2><%= t(".test_questions") %></h2>
 
   <table>
     <tr>
       <th>id</th>
-      <th>Body</th>
+      <th><%= t(".body") %></th>
     </tr>
 
     <%= render @test.questions %>
 
   </table>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to t(".new_question"), new_admin_test_question_path(@test) %>
 <% else %>
-  <p>This test has no questions.</p>
+  <p><%= t(".no_question") %></p>
 <% end %>
 
 

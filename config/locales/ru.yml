@@ -1,2 +1,80 @@
 ru:
   welcome: "Добро пожаловать!"
+
+  tests:
+    test:
+      start: "Пройти тест"
+    index:
+      tests: "Тесты"
+      title: "Название"
+      level: "Уровень"
+      actions: "Действия"
+
+  admin:
+    tests:
+      index:
+        tests: "Тесты"
+        title: "Название"
+        level: "Уровень"
+        actions: "Действия"
+        new_test: "Новый тест"
+      test:
+        show: "Просмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        shoe: "Вы действительно хотите удалить тест?"
+      new:
+        create_new_test: "Создать новый тест"
+        back: "Назад"
+      edit:
+        edit_test: "Редактирование теста: %{title}, уровень: %{level}"
+        back: "Назад"
+      show:
+        show_test: "Тест: %{title}, уровень: %{level}"
+        back: "Назад"
+        edit_test: "Редактировать тест"
+        delete_test: "Удалить тест"
+        sure: "Вы действительно хотите удалить тест?"
+        test_questions: "Вопросы теста:"
+        body: "Текст вопроса"
+        new_question: "Добавить новый вопрос"
+        no_question: "В этом тесте пока нет вопросов"
+
+    answers:
+      create:
+        save: "Сохранить ответ"
+      answer:
+        show: "Просмотреть"
+        edit: "Редактировать"
+        delete: "Удалить"
+        shoe: "Вы действительно хотите удалить ответ?"
+      edit:
+        show: "Показать ответ"
+        back: "Назад"
+        title: "Редактирование ответа"
+      new:
+        back: "Назад"
+      show:
+        back: "Назад"
+        answers: "Ответ: "
+
+  helpers:
+    label:
+      answer:
+        body: 'Текст ответа'
+        correct: 'Верный ответ'
+        submit: 'Создать ответ'
+      test:
+        category_id: "Категория"
+        title: "Название"
+        level: "Уровень"
+        submit: "Сохранить тест"
+    select:
+      prompt: "Выберете категорию:"
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружено %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"

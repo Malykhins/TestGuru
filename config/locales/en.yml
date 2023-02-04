@@ -1,2 +1,78 @@
 en:
   welcome: "Welcome!"
+
+  tests:
+    test:
+      start: "Start"
+
+    index:
+      tests: "Tests"
+      title: "Title"
+      level: "Level"
+      actions: "Actions"
+  admin:
+    answers:
+      create:
+        save: 'Answer was created'
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        shoe: "Are you sure?"
+      edit:
+        show: "Show"
+        back: "Back"
+        title: "Edit Answer"
+      new:
+        back: "Back"
+      show:
+        back: "Back"
+        answers: "Answer:"
+
+    tests:
+      index:
+        tests: "Tests"
+        title: "Title"
+        level: "Level"
+        actions: "Actions"
+        new_test: "New test"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        shoe: "Are you sure?"
+      new:
+        create_new_test: "Create new test"
+        back: "Back"
+      edit:
+        edit_test: "Edit %{title} test, level: %{level}"
+        back: "Back"
+      show:
+        show_test: "Test: %{title}, level: %{level}"
+        back: "Back"
+        edit_test: "Edit test"
+        delete_test: "Delete test"
+        sure: "Are you sure remove the test?"
+        test_questions: "Test questions:"
+        body: "Body"
+        new_question: "New question"
+        no_question: "This test has no questions."
+
+  helpers:
+    label:
+      answer:
+        body: 'Answer text'
+        label: 'Correct'
+        submit: 'Create answer'
+
+      test:
+        category_id: "Category"
+        title: "Title"
+        level: "Level"
+        submit: "Save test"
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
