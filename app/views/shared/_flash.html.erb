@@ -1,3 +1,12 @@
 <% flash.each do |key, message| %>
-  <%= content_tag :p, message, class:"flash #{key}" %>
+  <% case key.to_s %>
+  <% when 'alert' %>
+    <div class="alert alert-danger" role="alert">
+      <li><%= message %></li>
+    </div>
+  <% when 'notice' %>
+    <div class="alert alert-primary" role="alert">
+      <li><%= message %></li>
+    </div>
+  <% end %>
 <% end %>

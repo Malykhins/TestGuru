@@ -1,0 +1,10 @@
+<div class="container">
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to 'TestGuru', root_path, class:'navbar-brand' %>
+
+    <span class="navbar-text">
+      Welcome, <b><%= current_user.email %></b> Guru |
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+    </span>
+  </nav>
+</div>

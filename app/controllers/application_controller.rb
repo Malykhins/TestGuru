@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
 
-  def after_sign_in_path_for(user)
-    if user.is_a?(Admin)
-      admin_tests_path
-    else
-      super
-    end
-  end
+  # def after_sign_in_path_for(user)
+  #   if user.is_a?(Admin)
+  #     admin_tests_path
+  #   else
+  #     super
+  #   end
+  # end
 
   def default_url_options
     { lang: I18n.locale == I18n.default_locale ? nil : I18n.locale }

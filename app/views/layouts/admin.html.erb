@@ -10,10 +10,20 @@
 
 <body>
 
-  <%= render 'admin/nav' %>
-  <%= render 'shared/flash' %>
+  <%= render 'admin/admin_nav' %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col col-md-4">
+        <h2>Admin panel</h2>
+      </div>
 
-  <%= yield %>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= render 'shared/flash' %>
+    <%= yield %>
+  </div>
 
   <%= render 'shared/footer' %>
 </body>
