@@ -10,6 +10,12 @@ en:
       title: "Title"
       level: "Level"
       actions: "Actions"
+
+  test_passages:
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произшла ошибка!"
+
   admin:
     answers:
       create:

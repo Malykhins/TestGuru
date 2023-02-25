@@ -10,6 +10,11 @@ ru:
       level: "Уровень"
       actions: "Действия"
 
+  test_passages:
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произшла ошибка!"
+
   admin:
     tests:
       index:
