@@ -6,7 +6,7 @@
     </div>
   <% when 'notice' %>
     <div class="alert alert-primary" role="alert">
-      <li><%= message %></li>
+      <li><%= message.html_safe %></li>
     </div>
   <% end %>
 <% end %>
