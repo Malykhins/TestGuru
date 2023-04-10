@@ -1,29 +1,34 @@
-<head>
-  <title>Admin Panel | TestGuru</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="view_port", content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <title>Admin Panel | TestGuru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<body>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-  <%= render 'admin/admin_nav' %>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col col-md-4">
-        <h2>Admin panel</h2>
+  <body>
+
+    <%= render 'admin/admin_nav' %>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col col-md-4">
+          <h2>Admin panel</h2>
+        </div>
+
       </div>
-
     </div>
-  </div>
 
-  <div class="container">
-    <%= render 'shared/flash' %>
-    <%= yield %>
-  </div>
+    <div class="container">
+      <%= render 'shared/flash' %>
+      <%= yield %>
+    </div>
 
-  <%= render 'shared/footer' %>
-</body>
+    <%= render 'shared/footer' %>
+  </body>
+</html>

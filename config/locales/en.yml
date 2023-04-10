@@ -63,6 +63,8 @@ en:
         body: "Body"
         new_question: "New question"
         no_question: "This test has no questions."
+      form_inline:
+        submit: "OK"
 
   helpers:
     label:

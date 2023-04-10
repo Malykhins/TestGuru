@@ -44,6 +44,8 @@ ru:
         body: "Текст вопроса"
         new_question: "Добавить новый вопрос"
         no_question: "В этом тесте пока нет вопросов"
+      form_inline:
+        submit: "OK"
 
     answers:
       create:

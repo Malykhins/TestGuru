@@ -27,7 +27,7 @@ function SortRowsByTitle() {
 
   let sortedTable = document.createElement('table')
 
-  sortedTable.classList.add('.table')
+  //sortedTable.classList.add('table')
 
   sortedTable.appendChild(rows[0])
 
@@ -36,7 +36,6 @@ function SortRowsByTitle() {
   }
 
   table.parentNode.replaceChild(sortedTable, table)
-
 }
 
 function compareRowsAsc(row1, row2) {
