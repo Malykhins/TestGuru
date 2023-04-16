@@ -5,15 +5,16 @@ categories = Category.create!([
                                 { title: 'Internet protocols' }
                               ])
 users = User.create!([
-                       { name: 'Sergey', email: 'msa@mail.ru' },
-                       { name: 'Kirill', email: 'mks@mail.ru' },
-                       { name: 'Irina', email: 'mio@mail.ru' }
+                       { first_name: 'a', last_name: 'a', confirmation_token: 'QWUsffbK3xM8k6c2Q3Qz', email: 'a@a.a',
+                        encrypted_password: '$2a$12$idPjevYfbqQamWFeeOYEMeXWJuLWAkwQ7jhg/mGsDS.o5pOM0oykm',
+                        sign_in_count: 37, type: 'Admin', password: 'aaaaaa'}
+
                      ])
 
 tests = Test.create!([
                        { title: 'Ruby', level: 1, category: categories[0], author: users[0] },
-                       { title: 'Rails', level: 2, category: categories[0], author: users[1] },
-                       { title: 'HTML', level: 1, category: categories[1], author: users[2] }
+                       { title: 'Rails', level: 2, category: categories[0], author: users[0] },
+                       { title: 'HTML', level: 1, category: categories[1], author: users[0] }
                      ])
 
 questions = Question.create!([
