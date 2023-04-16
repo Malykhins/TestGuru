@@ -17,6 +17,7 @@ import "channels"
 import "./sorting"
 import "./password_match"
 import "./form_inline"
+import "./progress_bar"
 
 Rails.start()
 Turbolinks.start()
