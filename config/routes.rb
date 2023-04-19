@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+
   devise_for :users, controllers: { registrations: 'users/registrations'},
                      path_names: { sign_in: :login, sign_out: :logout }
 
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  resources :feedbacks, only: %i[new create]
 
   namespace :admin do
     resources :gists, only: :index

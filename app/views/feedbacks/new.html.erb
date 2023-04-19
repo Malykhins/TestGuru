@@ -1,0 +1,9 @@
+<%= form_with model: @feedback, local: true do |form| %>
+
+  <div>
+    <%= form.label :message %>
+    <%= form.text_area :message, class: "form-control" %>
+  </div>
+
+  <p><%= form.submit 'Send', class: "btn btn-primary" %></p>
+<% end %>

@@ -5,4 +5,10 @@ class TestsMailer < ApplicationMailer
 
     mail to: @user.email, subject: 'You just completed the TestGuru test!'
   end
+
+  def send_feedback(feedback)
+    @feedback = feedback
+
+    mail to: 's.a.malyhin@gmail.com', subject: "Feedback from the #{@feedback.name}."
+  end
 end
