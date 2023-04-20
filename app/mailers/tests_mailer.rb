@@ -9,6 +9,6 @@ class TestsMailer < ApplicationMailer
   def send_feedback(feedback)
     @feedback = feedback
 
-    mail to: 's.a.malyhin@gmail.com', subject: "Feedback from the #{@feedback.name}."
+    mail to: 's.malyhin@inbox.ru', subject: "Feedback from the #{@feedback.name}."
   end
 end
