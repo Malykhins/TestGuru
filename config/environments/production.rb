@@ -69,10 +69,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.mail.ru',
     port: 465,
+    authentication: 'plain',
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
-    authentication: 'plain',
-    enable_starttls: true
+    tls: true
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

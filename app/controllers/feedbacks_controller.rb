@@ -6,7 +6,7 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     if @feedback.save
-      TestsMailer.send_feedback(@feedback).deliver_now
+      TestsMailer.send_feedback(@feedback).deliver_now!
       redirect_to root_path, notice: 'Your message has been sent to the administrator!'
     else
       render :new, alert: 'The message was not sent!'

@@ -5,9 +5,9 @@ ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.7'
-gem 'net-smtp', require: false
-gem 'net-imap', require: false
-gem 'net-pop', require: false
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 gem 'rails-i18n'
 gem 'pg'
 # Use Puma as the app server
