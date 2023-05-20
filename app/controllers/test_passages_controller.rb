@@ -5,13 +5,20 @@ class TestPassagesController < ApplicationController
 
   def show; end
 
-  def result; end
+  def result
+    @user_badges = session[:user_badges]
+  end
 
   def update
     @test_passage.accept!(params[:answer_ids])
 
     if @test_passage.completed?
       TestsMailer.completed_test(@test_passage).deliver_now
+
+      session[:user_badges] = if Badge.any?
+                                current_user.award(@test_passage)
+                              end
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show

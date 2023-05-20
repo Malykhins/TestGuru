@@ -1,0 +1,9 @@
+<h1>User Badges:</h1>
+<ol>
+  <% @badges.each do |badge| %>
+    <li>
+      <%= badge.name %>
+      <%= image_tag "badges/#{badge.image}", size: "100x100" %>
+    </li>
+  <% end %>
+</ol>

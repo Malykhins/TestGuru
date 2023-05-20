@@ -1,0 +1,14 @@
+<h1>Badges control</h1>
+<h2>Add or remove the rule for awarding a badge to a user:</h2>
+
+<%= form_with url: admin_badges_select_path, local: true do |f| %>
+  <% @badges.each_with_index do |badge, index| %>
+    <%= f.hidden_field("badge_names[]", value: badge[:name] ) %>
+    <%= f.check_box("badge_#{index}", { checked: Badge.find_by(name: badge[:name]).present? }, '1', '0')%>
+    <%= f.label("badge_#{index}", badge[:name]) %><br>
+  <% end %>
+  <p><%= f.submit 'Select' %></p>
+<% end %>
+
+
+

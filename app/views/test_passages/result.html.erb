@@ -1,7 +1,6 @@
 <h1>The <%= @test_passage.test.title %>Test was Completed</h1>
 
-<p>
-
+<div>
   <% if @test_passage.success? %>
     <%= 'Test passed successfully' %>
     <p>
@@ -12,7 +11,20 @@
       Your result: <span class="incorrect"><%= @test_passage.percentage_result.floor %></span>%. Test failed.
     </p>
   <% end %>
+</div>
 
-</p>
+<div>
+  <% if @user_badges&.any? %>
+    <p>Congratulations! You have received a new badge.</p>
+    <ol>
+      <% @user_badges.each do |badge|%>
+        <li>
+          <%= badge[0] %>
+          <%= image_tag "badges/#{badge[1]}", size: "100x100" %>
+        </li>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
 
 <%= link_to 'Back to test selection', tests_path %>

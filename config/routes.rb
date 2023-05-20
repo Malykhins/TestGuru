@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   devise_for :users, controllers: { registrations: 'users/registrations'},
                      path_names: { sign_in: :login, sign_out: :logout }
 
@@ -19,9 +18,12 @@ Rails.application.routes.draw do
   root 'tests#index'
 
   resources :feedbacks, only: %i[new create]
+  get 'user_badges/index'
 
   namespace :admin do
+    post 'badges/select'
     resources :gists, only: :index
+    resources :badges, only: :index
 
     resources :tests do
       patch :update_inline, on: :member

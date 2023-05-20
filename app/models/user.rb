@@ -11,7 +11,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :my_tests, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
   has_many :badges, through: :user_badges
+
 
   validates :email, presence: true
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP}
@@ -25,4 +27,23 @@ class User < ApplicationRecord
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
+
+  def award(test_passage)
+    @user_badges = []
+
+    Badge.all.each do |badge|
+      method_name = badge.name.downcase.gsub(/[^0-9a-z]/, '_').squeeze('_')
+
+      if BadgeService.new(test_passage).send("check_#{method_name}?")
+        UserBadge.create!(user: test_passage.user, badge: badge)
+        @user_badges.push([badge.name, badge.image])
+      end
+    end
+
+    return @user_badges
+  end
+
+  private
+
+
 end
