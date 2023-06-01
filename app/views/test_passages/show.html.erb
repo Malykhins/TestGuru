@@ -1,3 +1,9 @@
+<div id="timer" style="text-align: right"
+     data-test-time="<%= @test_passage.test.time_limit %>"
+     data-test-passage="<%= @test_passage.id %>"
+     data-test="<%= @test_passage.test.id %>">
+</div>
+
 <h1>Passing the <%= @test_passage.test.title %>Test</h1>
 
 <% total_questions = @test_passage.test.questions.count %>

@@ -49,7 +49,7 @@ ru:
 
     answers:
       create:
-        save: "Сохранить ответ"
+        save: "Ответ сохранен!"
       answer:
         show: "Просмотреть"
         edit: "Редактировать"

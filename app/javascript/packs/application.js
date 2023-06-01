@@ -18,6 +18,7 @@ import "./sorting"
 import "./password_match"
 import "./form_inline"
 import "./progress_bar"
+import "./timer"
 
 Rails.start()
 Turbolinks.start()

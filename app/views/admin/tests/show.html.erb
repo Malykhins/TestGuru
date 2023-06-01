@@ -1,4 +1,3 @@
-<% if @questions.present? %>
   <p><%= t(".show_test", title: @test.title, level: @test.level) %></p>
 
   <%= link_to t('.back'), admin_tests_path %>
@@ -6,6 +5,7 @@
   <%= link_to t('.delete_test'), admin_test_path(@test),
               method: :delete, data: { confirm: t(".sure") } %>
 
+<% if @questions.present? %>
   <h2><%= t(".test_questions") %></h2>
 
   <table>

@@ -14,5 +14,10 @@
     <%= form.number_field :level, id: :test_level %>
   </p>
 
+  <p>
+    <%= form.label :time_limit%>
+    <%= form.select :time_limit, options_for_select([nil, 1, 5, 10], @test.time_limit) %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>
